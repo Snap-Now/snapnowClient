@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from '../components/Post';
+import Header from '../components/Header';
 
 import { ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 
@@ -7,6 +8,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Header />
         <Post
           frontImg='https://e0.pxfuel.com/wallpapers/415/250/desktop-wallpaper-pop-cat-popcat.jpg'
           backImg='https://content.imageresizer.com/images/memes/Pop-Cat-meme-5.jpg'
