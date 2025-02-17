@@ -19,7 +19,7 @@ const Header = () => {
             <Text style={styles.title}>SnapNow</Text>
             <View style={styles.iconContainer}>
                 <TouchableOpacity onPress={SearchPress}>
-                    <SearchIcon width={24} height={24} style={styles.icon} />
+                    <SearchIcon width={20} height={20} style={styles.icon} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={SettingPress}>
                     <SettingIcon width={24} height={24} style={styles.icon} />
