@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Pressable, TouchableOpacity } from 'react-native';
 
 // icons
-import LiekIcon from '../assets/icons/like.svg';
+import LiekIcon from '../assets/icons/small-like.svg';
 import CommentIcon from '../assets/icons/comment.svg';
 
 interface PostProps {
@@ -50,10 +50,10 @@ const Post: React.FC<PostProps> = ({ frontImg, backImg, profileImg, username, po
             </View>
             <View style={styles.fedAction}>
                 <TouchableOpacity>
-                    <LiekIcon width={24} height={24} style={styles.icon} />
+                    <LiekIcon style={styles.icon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <CommentIcon width={24} height={24} style={styles.icon} />
+                    <CommentIcon style={styles.icon} />
                 </TouchableOpacity>
             </View>
             <Text style={styles.likesQuantity}>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
-        marginBottom: 20,
+        marginBottom: 25,
     },
     user: {
         flexDirection: 'row',
@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
         marginBottom: 8,
     },
     icon: {
-        backgroundColor: '#fff',
         justifyContent: 'space-between',
         marginLeft: 10,
     },

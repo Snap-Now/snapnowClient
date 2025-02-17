@@ -12,7 +12,7 @@ import ProfileScreen from '../screens/Profile';
 import HomeIcon from '../assets/icons/home.svg';
 import MessageIcon from '../assets/icons/message.svg';
 import NewPostIcon from '../assets/icons/newpost.svg';
-import LikeIcon from '../assets/icons/like.svg';
+import LikeIcon from '../assets/icons/heart.svg';
 import ProfileIcon from '../assets/icons/profile.svg';
 
 // 화면 타입 정의
@@ -34,19 +34,19 @@ const Footer: React.FC = () => {
       {/* 커스텀 네비게이션 바 */}
       <View style={styles.navBar}>
         <TouchableOpacity onPress={() => setCurrentScreen("Home")} style={styles.navButton}>
-          <HomeIcon width={28} height={28} />
+          <HomeIcon />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCurrentScreen("Message")} style={styles.navButton}>
-          <MessageIcon width={28} height={28} />
+          <MessageIcon/>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCurrentScreen("NewPost")} style={styles.navButton}>
-          <NewPostIcon width={28} height={28} />
+          <NewPostIcon />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCurrentScreen("Like")} style={styles.navButton}>
-          <LikeIcon width={28} height={28} />
+          <LikeIcon />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCurrentScreen("Profile")} style={styles.navButton}>
-          <ProfileIcon width={28} height={28} />
+          <ProfileIcon />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
