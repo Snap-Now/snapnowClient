@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
         marginBottom: 8,
     },
     icon: {
+        backgroundColor: '#fff',
         justifyContent: 'space-between',
         marginLeft: 10,
     },
