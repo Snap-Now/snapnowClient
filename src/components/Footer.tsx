@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, SafeAreaView, TouchableOpacity, StyleSheet } from 'react-native';
 
 // screens
 import HomeScreen from '../screens/Home';

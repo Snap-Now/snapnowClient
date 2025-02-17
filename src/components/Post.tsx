@@ -27,47 +27,47 @@ const Post: React.FC<PostProps> = ({ frontImg, backImg, profileImg, username, po
     };
 
     return(
-      <View style={styles.container}>
-          <View style={styles.user}>
-              <View>
-                  <Image source={{uri: profileImg}} style={styles.profile} />
-              </View>
-              <View>
-                  <Text style={styles.userName}>{username}</Text>
-              </View>
-              <View>
-                  <Text style={styles.articleTime}>{postTime}</Text>
-              </View>
-          </View>
-          <View>
-              <Pressable onPress={changeImg}>
-                  <ImageBackground source={{ uri: images[0] }} style={styles.articleLargeImage}>
-                      <View>
-                          <Image source={{ uri: images[1] }} style={styles.articleSmallImage} />
-                      </View>
-                  </ImageBackground>
-              </Pressable>
-          </View>
-          <View style={styles.fedAction}>
-              <TouchableOpacity>
+        <View style={styles.container}>
+            <View style={styles.user}>
+                <View>
+                    <Image source={{uri: profileImg}} style={styles.profile} />
+                </View>
+                <View>
+                    <Text style={styles.userName}>{username}</Text>
+                </View>
+                <View>
+                    <Text style={styles.articleTime}>{postTime}</Text>
+                </View>
+            </View>
+            <View>
+                <Pressable onPress={changeImg}>
+                    <ImageBackground source={{ uri: images[0] }} style={styles.articleLargeImage}>
+                        <View>
+                            <Image source={{ uri: images[1] }} style={styles.articleSmallImage} />
+                        </View>
+                    </ImageBackground>
+                </Pressable>
+            </View>
+            <View style={styles.fedAction}>
+                <TouchableOpacity>
                     <LiekIcon width={24} height={24} style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity>
+                </TouchableOpacity>
+                <TouchableOpacity>
                     <CommentIcon width={24} height={24} style={styles.icon} />
-              </TouchableOpacity>
-          </View>
-          <Text style={styles.likesQuantity}>
-              {likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} Likes
-          </Text>
-          <View style={styles.fedContent}>
-              <Text style={styles.fedUserName}>
-                  {username}{' '}
-              </Text>
-              <Text style={styles.fedUserContent}>
-                  미리보기에서는 텍스트 1줄까지만 지원한다.
-              </Text>
-          </View>
-      </View>
+                </TouchableOpacity>
+            </View>
+            <Text style={styles.likesQuantity}>
+                {likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} Likes
+            </Text>
+            <View style={styles.fedContent}>
+                <Text style={styles.fedUserName}>
+                    {username}{' '}
+                </Text>
+                <Text style={styles.fedUserContent}>
+                    미리보기에서는 텍스트 1줄까지만 지원한다.
+                </Text>
+            </View>
+        </View>
     );
 };
 
