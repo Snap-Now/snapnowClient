@@ -1,5 +1,9 @@
-import React from 'react';
-import { View, Image, StyleSheet, Text, Dimensions } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, StyleSheet, Pressable, Dimensions, Text } from 'react-native';
+
+// icons
+import LikeIcon from '../assets/icons/white_like.svg';
+import CommentIcon from '../assets/icons/white_comment.svg';
 
 const numColumns = 3;
 const screenWidth = Dimensions.get("window").width;
@@ -11,10 +15,37 @@ interface PhotoGridProps {
 }
 
 const PhotoGrid: React.FC<PhotoGridProps> = ({ data }) => {
+    const [longPressId, setLongPressId] = useState<number | null>(null);
+
+    const handleLongPress = (id: number) => {
+        setLongPressId(id); // 특정 사진의 id를 저장
+    };
+
+    const handlePressOut = () => {
+        setLongPressId(null); // long press가 끝나면 상태 초기화
+    };
+
     return (
         <View style={styles.gridContainer}>
             {data.map((item) => (
-                <Image key={item.id} source={{ uri: item.uri }} style={styles.image} />
+                <Pressable
+                    key={item.id}
+                    onLongPress={() => handleLongPress(item.id)}
+                    onPressOut={handlePressOut}
+                    style={styles.pressable}
+                >
+                    <Image key={item.id} source={{ uri: item.uri }} style={styles.image} />
+                    {longPressId === item.id && (
+                        <View style={styles.overlay}>
+                            <View style={styles.hovercontainer}>
+                                <LikeIcon style={styles.icon}/>
+                                <Text style={styles.hoverText}>{item.likes}</Text>
+                            </View>
+                            <CommentIcon style={styles.icon}/>
+                            <Text style={styles.hoverText}>{item.comments}</Text>
+                        </View>
+                    )}
+                </Pressable>
             ))}
         </View>
     );
@@ -27,11 +58,35 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: "space-between",
     },
+    pressable: {
+        position: 'relative', // overlay와 아이콘을 위해 position 설정
+    },
     image: {
         width: imageSize,
         height: imageSize,
         marginBottom: spacing,
     },
+    overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: '#3131314D',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    hovercontainer: {
+        flexDirection: 'row',
+        marginRight: 7,
+    },
+    icon: {
+        width: 20,
+        height: 20,
+        marginRight: 3,
+    },
+    hoverText: {
+        color: '#FFFFFF',
+        fontSize: 14,
+        fontWeight: '500',
+    }
 });
 
 export default PhotoGrid;
