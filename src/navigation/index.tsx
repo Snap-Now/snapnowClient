@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
         width: 24,
     },
     tabBarStyle: {
-        height: '7%',
+        height: '6%',
         backgroundColor: '#fff',
     },
     tabIcon: {

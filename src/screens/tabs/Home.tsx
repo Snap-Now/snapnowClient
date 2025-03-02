@@ -1,14 +1,13 @@
 import React from 'react';
 import PROFILE from '../../index';
 import Post from '../../components/Post';
-import SettingIcon from '../../assets/icons/setting.svg';
-import SearchIcon from '../../assets/icons/search.svg'
-
+import IMAGES from '../../assets/images/index';
 import {
     ScrollView,
     StyleSheet,
     View,
     Text,
+    Image,
     TouchableOpacity,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -32,10 +31,10 @@ const HomeScreen = () => {
                 <Text style={styles.appName}>SnapNow</Text>
                 <View style={styles.iconContainer}>
                     <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-                        <SearchIcon width={20} height={20} style={styles.icon} />
+                        <Image source={IMAGES.SEARCH} style={styles.searchIcon} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
-                        <SettingIcon width={24} height={24} style={styles.icon} />
+                    <Image source={IMAGES.SETTING} style={styles.settingIcon} />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -99,8 +98,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    icon: {
+    searchIcon: {
         marginLeft: 15,
+        width: 22,
+        height: 22,
+    },
+    settingIcon: {
+        marginLeft: 15,
+        width: 24,
+        height: 24,
     },
     post:{
         marginTop: 10,
