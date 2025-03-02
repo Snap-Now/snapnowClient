@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     backIcon: {
         position: 'absolute',
-        left: 16,
+        left: 10,
         padding: 8,
     },
     title: {

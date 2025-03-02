@@ -39,7 +39,7 @@ export default function SettingScreen() {
                     <Text style={styles.label}>Like, comment</Text>
                     <Switch
                         value={likeComment}
-                        onValueChange={() => setLikeComment((previousState) => !previousState)}
+                        onValueChange={setLikeComment}
                         trackColor={{ false: "white", true: "black"}}
                         thumbColor="white"
                     />
@@ -47,7 +47,7 @@ export default function SettingScreen() {
                 <View style={styles.row}>
                     <Text style={styles.label}>Chatting</Text>
                     <Switch value={chatting}
-                        onValueChange={() => setChatting((previousState) => !previousState)}
+                        onValueChange={setChatting}
                         trackColor={{ false: "white", true: "black"}}
                         thumbColor="white"
                     />
@@ -55,7 +55,7 @@ export default function SettingScreen() {
                 <View style={styles.row}>
                     <Text style={styles.label}>Tag</Text>
                     <Switch value={tag}
-                        onValueChange={() => setTag((previousState) => !previousState)}
+                        onValueChange={setTag}
                         trackColor={{ false: "white", true: "black"}}
                         thumbColor="white"
                     />
@@ -63,7 +63,7 @@ export default function SettingScreen() {
                 <View style={styles.row}>
                     <Text style={styles.label}>New Follower</Text>
                     <Switch value={newFollower}
-                        onValueChange={() => setNewFollower((previousState) => !previousState)}
+                        onValueChange={setNewFollower}
                         trackColor={{ false: "white", true: "black"}}
                         thumbColor="white"
                     />
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     },
     backIcon: {
         position: 'absolute',
-        left: 16,
+        left: 10,
         padding: 8,
     },
     title: {

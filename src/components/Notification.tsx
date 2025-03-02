@@ -1,19 +1,14 @@
 import React from 'react';
-import PROFILE from '../index';
-import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView } from "react-native-safe-area-context";
 import { 
-    ScrollView,
     StyleSheet,
     View,
     Text,
     Image,
-    TouchableOpacity
 } from 'react-native';
 
 interface NotificationProps {
     username: string;
-    profileImage: string; // 프로필 이미지 URL 추가
+    profileImage: string;
     type: "request" | "new_post" | "reply_snap" | "join_snap" | "follow" | "like" | "mention" | "comment";
     time: string;
 }

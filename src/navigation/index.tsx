@@ -58,6 +58,7 @@ const BottomTabNavigator = () => {
                 component={NewPostScreen}
                 options={{
                     title: 'NewPost',
+                    tabBarStyle: { display: 'none' },
                     tabBarIcon: ({ focused }) => (
                         <Image
                             source={IMAGES.CREATE}

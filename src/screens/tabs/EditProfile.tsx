@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     },
     backIcon: {
         position: 'absolute',
-        left: 16,
+        left: 10,
         padding: 8,
         zIndex: 1, // 다른 요소보다 위에 배치
         justifyContent: 'center',
