@@ -1,7 +1,7 @@
 import React from "react";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "react-native";
-import Navigator from "./src/navigation/index";
+import Navigator from "./navigation/index";
 import { Background } from "@react-navigation/elements";
 
 const MyTheme = {

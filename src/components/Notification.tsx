@@ -5,11 +5,12 @@ import {
     Text,
     Image,
 } from 'react-native';
+import { NotificationType } from "../types/NotificationTypes";
 
 interface NotificationProps {
     username: string;
     profileImage: string;
-    type: "request" | "new_post" | "reply_snap" | "join_snap" | "follow" | "like" | "mention" | "comment";
+    type: NotificationType;
     time: string;
 }
 
