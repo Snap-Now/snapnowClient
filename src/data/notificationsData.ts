@@ -1,4 +1,4 @@
-import PROFILE from '../index';  // 경로 수정 필요
+import PROFILE from '../index';
 import { NotificationTypes } from '../types/NotificationTypes';
 
 export interface NotificationItem {
