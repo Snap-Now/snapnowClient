@@ -14,12 +14,7 @@ const notifications = [
     { id: "5", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "1d" },
     { id: "6", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1w" },
     { id: "7", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "1w" },
-    { id: "8", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "reply_snap", time: "2w" },
-    { id: "9", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "join_snap", time: "2w" },
-    { id: "10", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: '2w' },
-    { id: "11", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "3w" },
-    { id: "12", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "7w" },
-    { id: "13", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "comment", time: "12w" },
+    { id: "8", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "comment", time: "12w" },
 ];
 
 const Header = () => (

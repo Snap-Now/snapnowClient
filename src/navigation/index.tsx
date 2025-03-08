@@ -8,7 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screens/tabs/Home";
 import MessageScreen from "../screens/tabs/Message";
 import NewPostScreen from "../screens/tabs/NewPost";
-import LikesScreen from "../screens/tabs/Likes";
+import NotificationsScreens from "../screens/tabs/Notifications";
 import ProfileScreen from "../screens/tabs/Profile";
 import SearchScreen from "../screens/tabs/Search";
 import SettingScreen from "../screens/tabs/Setting";
@@ -69,7 +69,7 @@ const BottomTabNavigator = () => {
             />
             <Tab.Screen
                 name={SCREENS.LIKES}
-                component={LikesScreen}
+                component={NotificationsScreens}
                 options={{
                     title: 'Likes',
                     tabBarIcon: ({ focused }) => (
