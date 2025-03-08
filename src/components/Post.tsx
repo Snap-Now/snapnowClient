@@ -22,7 +22,7 @@ const Post: React.FC<PostProps> = ({ postId, frontImg, backImg, profileImg, user
 
     const [images, setImages] = useState(() => [frontImg, backImg]);
 
-    const changeImg = () => {
+    const swapImages = () => {
         setImages(([first, second]) => [second, first]);
     };
 
@@ -36,7 +36,7 @@ const Post: React.FC<PostProps> = ({ postId, frontImg, backImg, profileImg, user
             </View>
 
             {/* 게시물 이미지 */}
-            <Pressable onPress={changeImg}>
+            <Pressable onPress={swapImages}>
                 <ImageBackground source={{ uri: images[0] }} style={styles.articleLargeImage}>
                     <Image source={{ uri: images[1] }} style={styles.articleSmallImage} />
                 </ImageBackground>
@@ -54,7 +54,7 @@ const Post: React.FC<PostProps> = ({ postId, frontImg, backImg, profileImg, user
                 </View>
 
                 {/* 좋아요 개수 */}
-                <TouchableOpacity onPress={() => navigation.navigate('Likes')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Likes', { postId: postId})}>
                     <Text style={styles.likesQuantity}>
                         {new Intl.NumberFormat().format(likes)} Likes
                     </Text>
