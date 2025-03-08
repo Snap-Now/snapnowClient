@@ -16,6 +16,36 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 const profile = PROFILE.PROFILE;
 
+const posts = [
+    {
+        id: 'uos_gungong_1',
+        frontImg: PROFILE.FRONTIMG1,
+        backImg: PROFILE.BACKIMG1,
+        profileImg: profile,
+        username: "uos_gungong",
+        postTime: "30m",
+        likes: 1000,
+    },
+    {
+        id: 'squarepants_spongebob_1',
+        frontImg: PROFILE.FRONTIMG2,
+        backImg: PROFILE.BACKIMG2,
+        profileImg: PROFILE.PROFILE2,
+        username: "squarepants_spongebob",
+        postTime: "45m",
+        likes: 2000,
+    },
+    {
+        id: 'mr.Krabs_1',
+        frontImg: PROFILE.FRONTIMG3,
+        backImg: PROFILE.BACKIMG3,
+        profileImg: PROFILE.PROFILE3,
+        username: "mr.Krabs",
+        postTime: "1hr",
+        likes: 3000,
+    },
+];
+
 export type RootStackParamList = {
     Search: undefined;
     Setting: undefined;
@@ -40,30 +70,18 @@ const HomeScreen = () => {
             </View>
 
             <View style={styles.post}>
-                <Post
-                    frontImg={PROFILE.FRONTIMG1}
-                    backImg={PROFILE.BACKIMG1}
-                    profileImg={profile}
-                    username="uos_gungong"
-                    postTime="30m"
-                    likes={1000}
-                />
-                <Post
-                    frontImg={PROFILE.FRONTIMG2}
-                    backImg={PROFILE.BACKIMG2}
-                    profileImg={PROFILE.PROFILE2}
-                    username="squarepants_spongebob"
-                    postTime="45m"
-                    likes={2000}
-                />
-                <Post
-                    frontImg={PROFILE.FRONTIMG3}
-                    backImg={PROFILE.BACKIMG3}
-                    profileImg={PROFILE.PROFILE3}
-                    username="mr.Krabs"
-                    postTime="1hr"
-                    likes={3000}
-                />
+                {posts.map((post, index) => (
+                    <Post
+                        key={post.id}
+                        postId={post.id}
+                        frontImg={post.frontImg}
+                        backImg={post.backImg}
+                        profileImg={post.profileImg}
+                        username={post.username}
+                        postTime={post.postTime}
+                        likes={post.likes}
+                    />
+                ))}
             </View>
         </ScrollView>
     </SafeAreaView>

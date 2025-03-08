@@ -12,22 +12,29 @@ const notifications = [
     { id: "3", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "reply_snap", time: "12m" },
     { id: "4", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "join_snap", time: "12m" },
     { id: "5", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "1d" },
-    { id: "6", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1w" },
-    { id: "7", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "1w" },
-    { id: "8", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "comment", time: "12w" },
+    { id: "6", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1d" },
+    { id: "7", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "2d" },
+    { id: "8", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "2d" },
+    { id: "9", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "3d" },
+    { id: "10", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "5d" },
+    { id: "11", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "1w" },
+    { id: "12", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1w" },
+    { id: "13", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "1w" },
+    { id: "14", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "comment", time: "12w" },
 ];
-
-const Header = () => (
-    <View style={styles.topContainer}>
-        <Text style={styles.title}>Notification</Text>
-    </View>
-)
 
 export default function LikesScreen() {
     const navigation = useNavigation();
 
     return (
         <SafeAreaView style={styles.container} edges={['top']}>
+
+            {/* Header */}
+            <View style={styles.topContainer}>
+                <Text style={styles.title}>Notification</Text>
+            </View>
+
+            {/* Notifications */}
             <FlatList 
                 data={notifications}
                 keyExtractor={(item) => item.id}
@@ -39,7 +46,6 @@ export default function LikesScreen() {
                         time={item.time}
                     />
                 )}
-                ListHeaderComponent={Header}
                 contentContainerStyle={styles.listContainer}
             />
     </SafeAreaView>

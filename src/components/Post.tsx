@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, Pressable, TouchableOpacity } from 'react-native';
+import { useNavigation, NavigationProp  } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation/types.ts';
 
 // icons
 import LikeIcon from '../assets/icons/small-like.svg';
 import CommentIcon from '../assets/icons/comment.svg';
 
 interface PostProps {
+    postId: string;
     frontImg: string;
     backImg: string;
     profileImg: string;
@@ -14,7 +17,9 @@ interface PostProps {
     likes: number;
 }
 
-const Post: React.FC<PostProps> = ({ frontImg, backImg, profileImg, username, postTime, likes }) => {
+const Post: React.FC<PostProps> = ({ postId, frontImg, backImg, profileImg, username, postTime, likes }) => {
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
     const [images, setImages] = useState(() => [frontImg, backImg]);
 
     const changeImg = () => {
@@ -49,9 +54,11 @@ const Post: React.FC<PostProps> = ({ frontImg, backImg, profileImg, username, po
                 </View>
 
                 {/* 좋아요 개수 */}
-                <Text style={styles.likesQuantity}>
-                    {new Intl.NumberFormat().format(likes)} Likes
-                </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Likes')}>
+                    <Text style={styles.likesQuantity}>
+                        {new Intl.NumberFormat().format(likes)} Likes
+                    </Text>
+                </TouchableOpacity>
 
                 {/* 게시글 텍스트 */}
                 <View style={styles.fedContent}>

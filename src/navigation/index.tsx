@@ -15,6 +15,7 @@ import SettingScreen from "../screens/tabs/Setting";
 import FollowerScreen from "../screens/tabs/Follower";
 import FollowingScreen from "../screens/tabs/Following";
 import EditProfileScreen from '../screens/tabs/EditProfile';
+import LikesScreen from "../screens/tabs/Likes";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -57,7 +58,7 @@ const BottomTabNavigator = () => {
                 name={SCREENS.NEWPOST}
                 component={NewPostScreen}
                 options={{
-                    title: 'NewPost',
+                    title: 'NewSnap',
                     tabBarStyle: { display: 'none' },
                     tabBarIcon: ({ focused }) => (
                         <Image
@@ -68,10 +69,10 @@ const BottomTabNavigator = () => {
                 }}
             />
             <Tab.Screen
-                name={SCREENS.LIKES}
+                name={SCREENS.NOTIFICATIONS}
                 component={NotificationsScreens}
                 options={{
-                    title: 'Likes',
+                    title: 'Notifications',
                     tabBarIcon: ({ focused }) => (
                         <Image
                             source={focused ? IMAGES.LIKE_ACTIVE : IMAGES.LIKE}
@@ -107,12 +108,16 @@ const Navigator = () => {
                 component={BottomTabNavigator}
                 options={{ headerShown: false }}
             />
+            {/** Home화면 속 Search 및 Setting */}
             <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Setting" component={SettingScreen} options={{ headerShown: false }} />
+
+            {/** Post 게시글 속 Likes */}
+            <Stack.Screen name="Likes" component={LikesScreen} options={{ headerShown: false }} />
             
+            {/** Profile화면 속 Followers, Following, EditProfile */}
             <Stack.Screen name="Followers" component={FollowerScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Following" component={FollowingScreen} options={{ headerShown: false }} />
-            
             <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
     );
