@@ -5,17 +5,17 @@ import SCREENS from "../screens";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from "../screens/tabs/Home";
-import MessageScreen from "../screens/tabs/Message";
-import NewPostScreen from "../screens/tabs/NewPost";
-import NotificationsScreens from "../screens/tabs/Notifications";
-import ProfileScreen from "../screens/tabs/Profile";
-import SearchScreen from "../screens/tabs/Search";
-import SettingScreen from "../screens/tabs/Setting";
-import FollowerScreen from "../screens/tabs/Follower";
-import FollowingScreen from "../screens/tabs/Following";
-import EditProfileScreen from '../screens/tabs/EditProfile';
-import LikesScreen from "../screens/tabs/Likes";
+import HomeScreen from "../screens/main/Home";
+import MessageScreen from "../screens/main/Message";
+import NewPostScreen from "../screens/main/NewPost";
+import NotificationsScreens from "../screens/main/Notifications";
+import ProfileScreen from "../screens/main/Profile";
+import SearchScreen from "../screens/detail/Search";
+import SettingScreen from "../screens/detail/Setting";
+import FollowerScreen from "../screens/detail/Follower";
+import FollowingScreen from "../screens/detail/Following";
+import EditProfileScreen from '../screens/detail/EditProfile';
+import LikesScreen from "../screens/detail/Likes";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
