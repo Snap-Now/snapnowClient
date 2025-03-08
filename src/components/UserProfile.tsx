@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigation/types';
 
 import PhotoGrid from './PhotoGrid';
-import IMAGES from '../assets/images';
 
 
 const DATA = [
@@ -34,12 +35,6 @@ interface UserInformationProps {
     userFollowing: string;
 }
 
-export type RootStackParamList = {
-    Followers: undefined;
-    Following: undefined;
-    EditProfile: undefined;
-};
-
 const UserProfile: React.FC<UserInformationProps> = ({
     profileImg,
     userName,
@@ -48,7 +43,7 @@ const UserProfile: React.FC<UserInformationProps> = ({
     userFollowing,
     userDescription,
 }) => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
         <View style={styles.container}>

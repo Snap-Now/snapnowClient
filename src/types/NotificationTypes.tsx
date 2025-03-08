@@ -1,4 +1,4 @@
-export type NotificationType =
+export type NotificationTypes =
     | "request"
     | "new_post"
     | "reply_snap"

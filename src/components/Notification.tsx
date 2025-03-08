@@ -5,12 +5,12 @@ import {
     Text,
     Image,
 } from 'react-native';
-import { NotificationType } from "../types/NotificationTypes";
+import { NotificationTypes } from "../types/NotificationTypes";
 
 interface NotificationProps {
     username: string;
     profileImage: string;
-    type: NotificationType;
+    type: NotificationTypes;
     time: string;
 }
 

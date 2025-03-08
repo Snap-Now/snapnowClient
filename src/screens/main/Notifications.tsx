@@ -1,34 +1,17 @@
 import React from 'react';
-import PROFILE from '../../index';
 import Notification from '../../components/Notification';
 
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../navigation/types';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, StyleSheet, View, Text, TouchableOpacity, FlatList} from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { notifications, NotificationItem } from '../../data/notificationsData';
 
-const notifications = [
-    { id: "1", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "request", time: "12m" },
-    { id: "2", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "new_post", time: "12m" },
-    { id: "3", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "reply_snap", time: "12m" },
-    { id: "4", username: "squarepants_spongebob", profileImage: PROFILE.PROFILE2, type: "join_snap", time: "12m" },
-    { id: "5", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "1d" },
-    { id: "6", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1d" },
-    { id: "7", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "2d" },
-    { id: "8", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "2d" },
-    { id: "9", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "3d" },
-    { id: "10", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "5d" },
-    { id: "11", username: "uos_gungong", profileImage: PROFILE.PROFILE, type: "follow", time: "1w" },
-    { id: "12", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "like", time: "1w" },
-    { id: "13", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "mention", time: "1w" },
-    { id: "14", username: "mr.Krabs", profileImage: PROFILE.PROFILE3, type: "comment", time: "12w" },
-];
-
-export default function LikesScreen() {
-    const navigation = useNavigation();
+export default function NotificationsScreen() {
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     return (
         <SafeAreaView style={styles.container} edges={['top']}>
-
             {/* Header */}
             <View style={styles.topContainer}>
                 <Text style={styles.title}>Notification</Text>
@@ -48,7 +31,7 @@ export default function LikesScreen() {
                 )}
                 contentContainerStyle={styles.listContainer}
             />
-    </SafeAreaView>
+        </SafeAreaView>
     );
 }
 
@@ -73,5 +56,6 @@ const styles = StyleSheet.create({
     },
     listContainer: {
         backgroundColor: '#fff',
+        paddingBottom: 15,
     },
 });
