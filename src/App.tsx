@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "react-native";
-import Navigator from "./navigation/index";
-import { Background } from "@react-navigation/elements";
+import Navigator from "./navigation/RootNavigator";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 
 const MyTheme = {
     ...DefaultTheme,
@@ -10,13 +9,23 @@ const MyTheme = {
         ...DefaultTheme.colors,
         background: '#fff',
     }
-}
+};
+
+const AppContent = () => {
+    const { isAuthenticated } = useAuth();
+
+    return (
+        <NavigationContainer theme={MyTheme}>
+            <Navigator isAuthenticated={isAuthenticated} />
+        </NavigationContainer>
+    );
+};
 
 const App = () => {
     return (
-        <NavigationContainer theme={MyTheme}>
-            <Navigator />
-        </NavigationContainer>
+        <AuthProvider>
+            <AppContent />
+        </AuthProvider>
     );
 };
 

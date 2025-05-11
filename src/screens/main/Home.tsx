@@ -25,13 +25,11 @@ const HomeScreen: React.FC = () => {
             <View style={styles.iconContainer}>
                 <TouchableOpacity 
                     onPress={() => navigation.navigate('Search')}
-                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                 >
                     <Image source={IMAGES.SEARCH} style={styles.searchIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity 
                     onPress={() => navigation.navigate('Setting')}
-                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                 >
                     <Image source={IMAGES.SETTING} style={styles.settingIcon} />
                 </TouchableOpacity>

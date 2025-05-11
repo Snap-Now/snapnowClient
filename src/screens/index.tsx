@@ -1,4 +1,7 @@
 const SCREENS = {
+    LOGIN: 'Login',
+    REGISTER: 'Register',
+    MAINSTACK: 'MainStack',
     HOME: 'Home',
     MESSAGE: 'Message',
     NEWPOST: 'NewPost',

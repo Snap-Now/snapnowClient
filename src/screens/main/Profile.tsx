@@ -1,16 +1,18 @@
 import React from 'react';
-import PROFILE from '../..';
+import PROFILE from '../../index';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import UserProfile from '../../components/UserProfile';
+import { useAuth } from '../../context/AuthContext';
 
 const Profile = () => {
+    const { username } = useAuth();
     return(
         <SafeAreaView style={styles.container} edges={['top']}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <UserProfile
                     profileImg={PROFILE.PROFILE}
-                    userName="uos_gungong"
+                    userName={username}
                     userSnaps="10"
                     userFollowers="200"
                     userFollowing="180"
